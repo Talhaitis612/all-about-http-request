@@ -17,7 +17,9 @@ export class PostsService {
          {
             // this is by default, body means that you get the data extracted and converted to Javascript object
             // observe : 'body'
-            observe : 'response'
+            observe : 'response',
+            // changing response type
+            responseType : 'text'
          }
          ).subscribe(
             {
@@ -63,7 +65,8 @@ export class PostsService {
     deletePosts() {
         return this.http.delete('https://recipe-app-f81b0-default-rtdb.firebaseio.com/posts.json',
         {
-            observe: 'events'
+            observe: 'events',
+            responseType : 'text'
         }
         ).pipe(tap(event=>{
             // you can tap into these following HTTP Events if you want to do something
