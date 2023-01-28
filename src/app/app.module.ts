@@ -10,10 +10,16 @@ import { AuthInterceptorService } from './auth-interceptor.service';
   declarations: [AppComponent],
   imports: [BrowserModule, FormsModule, HttpClientModule],
   providers: [{
-    provide : HTTP_INTERCEPTORS,
-    useClass : AuthInterceptorService,
-    multi : true
-  }],
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptorService,
+    multi: true
+  },
+  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptorService,
+    multi: true
+  }
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
